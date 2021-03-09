@@ -1,4 +1,5 @@
 const User = require("./models").user;
+const TodoItem = require("./models").todoItem;
 
 async function getAllUsers() {
   try {
@@ -11,4 +12,39 @@ async function getAllUsers() {
   }
 }
 
-getAllUsers().then((users) => console.log(users));
+//getAllUsers().then((users) => console.log(users));
+
+const getAllItems = async () => {
+  try {
+    const items = await TodoItem.findAll();
+    const cleanLog = items.map((item) => item.get({ plain: true }));
+    console.log(cleanLog);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+//getAllItems();
+
+const getImportantItems = async () => {
+  try {
+    const items = await TodoItem.findAll({
+      where: { important: true },
+    });
+    const cleanLog = items.map((item) => item.get({ plain: true }));
+    console.log(cleanLog);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+//getImportantItems();
+
+const signUpNewUser = async (email, password, name, age) => {
+  try {
+    const newUser = await User.create({ email, password, name, age });
+    console.log(newUser);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+signUpNewUser("newguy2@gmail.com", "123", "newGuy", 35);
