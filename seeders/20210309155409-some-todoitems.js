@@ -9,6 +9,7 @@ module.exports = {
           task: "bread",
           deadline: "today",
           important: true,
+          todoListId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

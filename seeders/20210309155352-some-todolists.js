@@ -9,6 +9,7 @@ module.exports = {
           name: "shopping",
           createdAt: new Date(),
           updatedAt: new Date(),
+          userId: 1,
         },
       ],
       {}
