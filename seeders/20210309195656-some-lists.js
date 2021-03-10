@@ -7,16 +7,19 @@ module.exports = {
         name: "personal list",
         createdAt: new Date(),
         updatedAt: new Date(),
+        userId: 1,
       },
       {
         name: "work list",
         createdAt: new Date(),
         updatedAt: new Date(),
+        userId: 2,
       },
       {
         name: "sports list",
         createdAt: new Date(),
         updatedAt: new Date(),
+        userId: 2,
       },
     ]);
   },
